@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ostdari/react.git%20/static/css/main.9d384514.css",
-    "main.js": "/ostdari/react.git%20/static/js/main.93d9a648.js",
+    "main.js": "/ostdari/react.git%20/static/js/main.b741ae8e.js",
     "static/js/453.68693753.chunk.js": "/ostdari/react.git%20/static/js/453.68693753.chunk.js",
     "index.html": "/ostdari/react.git%20/index.html",
     "main.9d384514.css.map": "/ostdari/react.git%20/static/css/main.9d384514.css.map",
-    "main.93d9a648.js.map": "/ostdari/react.git%20/static/js/main.93d9a648.js.map",
+    "main.b741ae8e.js.map": "/ostdari/react.git%20/static/js/main.b741ae8e.js.map",
     "453.68693753.chunk.js.map": "/ostdari/react.git%20/static/js/453.68693753.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9d384514.css",
-    "static/js/main.93d9a648.js"
+    "static/js/main.b741ae8e.js"
   ]
 }
