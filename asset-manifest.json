@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ostdari/react.git%20/static/css/main.9d384514.css",
-    "main.js": "/ostdari/react.git%20/static/js/main.b741ae8e.js",
-    "static/js/453.68693753.chunk.js": "/ostdari/react.git%20/static/js/453.68693753.chunk.js",
-    "index.html": "/ostdari/react.git%20/index.html",
-    "main.9d384514.css.map": "/ostdari/react.git%20/static/css/main.9d384514.css.map",
-    "main.b741ae8e.js.map": "/ostdari/react.git%20/static/js/main.b741ae8e.js.map",
-    "453.68693753.chunk.js.map": "/ostdari/react.git%20/static/js/453.68693753.chunk.js.map"
+    "main.css": "/static/css/main.9d384514.css",
+    "main.js": "/static/js/main.83bb692b.js",
+    "static/js/453.68693753.chunk.js": "/static/js/453.68693753.chunk.js",
+    "index.html": "/index.html",
+    "main.9d384514.css.map": "/static/css/main.9d384514.css.map",
+    "main.83bb692b.js.map": "/static/js/main.83bb692b.js.map",
+    "453.68693753.chunk.js.map": "/static/js/453.68693753.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9d384514.css",
-    "static/js/main.b741ae8e.js"
+    "static/js/main.83bb692b.js"
   ]
 }
