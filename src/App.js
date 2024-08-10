@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { HashRouter  as Router, Route, Routes, Navigate } from 'react-router-dom';
 import LoginPage from './LoginPage';
 import MyCalendar from './components/MyCalendar';
 import TimeFinder from './components/TimeFinder'; // Импорт компонента поиска времени
