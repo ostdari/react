@@ -46,7 +46,7 @@ const findIntersections = (times) => {
 
     if (start < end) {
       result.push({
-        title: 'Available Time',
+        title: 'Доступное время',
         start: start,
         end: end
       });
@@ -139,33 +139,33 @@ const TimeFinder = () => {
 
   return (
     <div className="container mt-4">
-      <h2 className="mb-4">Find Common Available Time</h2>
+      <h2 className="mb-4">Поиск общего доступного времени</h2>
       <div className="row mb-3">
         <div className="col-md-4">
-          <h5>Select Candidate</h5>
+          <h5>Выберите кандидата</h5>
           <Select
             value={selectedCandidate}
             onChange={setSelectedCandidate}
             options={users.filter(user => user.label.includes('кандидат'))}
-            placeholder="Choose a candidate"
+            placeholder="Выберите кандидата"
           />
         </div>
         <div className="col-md-4">
-          <h5>Select Expert</h5>
+          <h5>Выберите эксперта</h5>
           <Select
             value={selectedExpert}
             onChange={setSelectedExpert}
             options={users.filter(user => user.label.includes('эксперт'))}
-            placeholder="Choose an expert"
+            placeholder="Выберите эксперта"
           />
         </div>
         <div className="col-md-4">
-          <h5>Select Recruiter</h5>
+          <h5>Выберите рекрутера</h5>
           <Select
             value={selectedRecruiter}
             onChange={setSelectedRecruiter}
             options={users.filter(user => user.label.includes('рекрутер'))}
-            placeholder="Choose a recruiter"
+            placeholder="Выберите рекрутера"
           />
         </div>
       </div>
@@ -179,7 +179,7 @@ const TimeFinder = () => {
             setEvents([]);
           }}
         >
-          Reset
+          Сброс
         </Button>
       </div>
       <div style={{ height: '600px' }}>
@@ -196,22 +196,22 @@ const TimeFinder = () => {
       </div>
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>{selectedEvent ? 'Edit Event' : 'Add Event'}</Modal.Title>
+          <Modal.Title>{selectedEvent ? 'Редактировать событие' : 'Добавить событие'}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
             <Form.Group controlId="formTitle">
-              <Form.Label>Title</Form.Label>
+              <Form.Label>Название</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter title"
+                placeholder="Введите название"
                 name="title"
                 value={formData.title}
                 onChange={handleChange}
               />
             </Form.Group>
             <Form.Group controlId="formStart">
-              <Form.Label>Start Time</Form.Label>
+              <Form.Label>Время начала</Form.Label>
               <Form.Control
                 type="datetime-local"
                 name="start"
@@ -220,7 +220,7 @@ const TimeFinder = () => {
               />
             </Form.Group>
             <Form.Group controlId="formEnd">
-              <Form.Label>End Time</Form.Label>
+              <Form.Label>Время окончания</Form.Label>
               <Form.Control
                 type="datetime-local"
                 name="end"
@@ -229,21 +229,21 @@ const TimeFinder = () => {
               />
             </Form.Group>
             <Form.Group controlId="formJob">
-              <Form.Label>Job</Form.Label>
+              <Form.Label>Работа</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter job title"
+                placeholder="Введите должность"
                 name="job"
                 value={formData.job}
                 onChange={handleChange}
               />
             </Form.Group>
             <Form.Group controlId="formComment">
-              <Form.Label>Comment</Form.Label>
+              <Form.Label>Комментарий</Form.Label>
               <Form.Control
                 as="textarea"
                 rows={3}
-                placeholder="Enter comments"
+                placeholder="Введите комментарии"
                 name="comment"
                 value={formData.comment}
                 onChange={handleChange}
@@ -253,10 +253,10 @@ const TimeFinder = () => {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleCancel}>
-            Cancel
+            Отменить
           </Button>
           <Button variant="primary" onClick={handleSave}>
-            Save
+            Сохранить
           </Button>
         </Modal.Footer>
       </Modal>

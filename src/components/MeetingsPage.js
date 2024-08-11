@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // Импорт стилей Boot
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
+import { FaTrash } from 'react-icons/fa'; // Импорт иконки корзины
 
 const localizer = momentLocalizer(moment);
 
@@ -190,7 +191,7 @@ const MeetingsPage = () => {
 
   return (
     <div className="container mt-4">
-      <h2 className="mb-4">Страница митингов</h2>
+      <h2 className="mb-4">Все</h2>
       <div className="row mb-3">
         <div className="col-md-4">
           <h5>Выберите кандидата</h5>
@@ -221,10 +222,7 @@ const MeetingsPage = () => {
         </div>
       </div>
       <div className="mb-3">
-        <Button
-          variant="secondary"
-          onClick={handleReset}
-        >
+        <Button variant="secondary" onClick={handleReset}>
           Сброс
         </Button>
       </div>
@@ -245,7 +243,7 @@ const MeetingsPage = () => {
         <Modal.Body>
           <Form>
             <Form.Group controlId="formTitle">
-              <Form.Label>Название</Form.Label>
+              <Form.Label style={{ marginTop: '1rem' }}>Название</Form.Label>
               <Form.Control
                 type="text"
                 name="title"
@@ -255,7 +253,7 @@ const MeetingsPage = () => {
               />
             </Form.Group>
             <Form.Group controlId="formStart">
-              <Form.Label>Время начала</Form.Label>
+              <Form.Label style={{ marginTop: '1rem' }}>Время начала</Form.Label>
               <Form.Control
                 type="datetime-local"
                 name="start"
@@ -264,7 +262,7 @@ const MeetingsPage = () => {
               />
             </Form.Group>
             <Form.Group controlId="formEnd">
-              <Form.Label>Время окончания</Form.Label>
+              <Form.Label style={{ marginTop: '1rem' }}>Время окончания</Form.Label>
               <Form.Control
                 type="datetime-local"
                 name="end"
@@ -273,7 +271,7 @@ const MeetingsPage = () => {
               />
             </Form.Group>
             <Form.Group controlId="formJob">
-              <Form.Label>Работа</Form.Label>
+              <Form.Label style={{ marginTop: '1rem' }}>Работа</Form.Label>
               <Select
                 value={formData.job}
                 onChange={handleSelectChange('job')}
@@ -281,82 +279,76 @@ const MeetingsPage = () => {
               />
             </Form.Group>
             <Form.Group controlId="formRecruiter">
-              <Form.Label>Рекрутер</Form.Label>
-              <div className="d-flex align-items-center">
+              <Form.Label style={{ marginTop: '1rem' }}>Рекрутер</Form.Label>
+              <div className="d-flex flex-column">
                 <Select
                   value={formData.recruiter}
                   onChange={handleSelectChange('recruiter')}
                   options={users.filter(user => user.label.includes('рекрутер'))}
-                  style={{ flex: 1 }}
+                  className="mb-2"
                 />
                 <Select
                   value={formData.status.recruiter}
                   onChange={handleSelectChange('status.recruiter')}
                   options={statuses}
-                  className="ml-2"
-                  style={{ flex: 1 }}
+                  className="mb-2"
                 />
                 <Button
                   variant="outline-danger"
                   onClick={() => handleRemoveUser('recruiter')}
-                  className="ml-2"
                 >
-                  🗑️
+                  <FaTrash /> Удалить
                 </Button>
               </div>
             </Form.Group>
             <Form.Group controlId="formCandidate">
-              <Form.Label>Кандидат</Form.Label>
-              <div className="d-flex align-items-center">
+              <Form.Label style={{ marginTop: '1rem' }}>Кандидат</Form.Label>
+              <div className="d-flex flex-column">
                 <Select
                   value={formData.candidate}
                   onChange={handleSelectChange('candidate')}
                   options={users.filter(user => user.label.includes('кандидат'))}
-                  style={{ flex: 1 }}
+                  className="mb-2"
                 />
                 <Select
                   value={formData.status.candidate}
                   onChange={handleSelectChange('status.candidate')}
                   options={statuses}
-                  className="ml-2"
-                  style={{ flex: 1 }}
+                  className="mb-2"
                 />
                 <Button
                   variant="outline-danger"
                   onClick={() => handleRemoveUser('candidate')}
-                  className="ml-2"
                 >
-                  🗑️
+                  <FaTrash /> Удалить
                 </Button>
               </div>
             </Form.Group>
             <Form.Group controlId="formExpert">
-              <Form.Label>Эксперт</Form.Label>
-              <div className="d-flex align-items-center">
+              <Form.Label style={{ marginTop: '1rem' }}>Эксперт</Form.Label>
+              <div className="d-flex flex-column">
                 <Select
                   value={formData.expert}
                   onChange={handleSelectChange('expert')}
                   options={users.filter(user => user.label.includes('эксперт'))}
-                  style={{ flex: 1 }}
+                  className="mb-2"
                 />
                 <Select
                   value={formData.status.expert}
                   onChange={handleSelectChange('status.expert')}
                   options={statuses}
-                  className="ml-2"
-                  style={{ flex: 1 }}
+                  className="mb-2"
                 />
                 <Button
                   variant="outline-danger"
                   onClick={() => handleRemoveUser('expert')}
-                  className="ml-2"
                 >
-                  🗑️
+                  <FaTrash /> Удалить
                 </Button>
               </div>
             </Form.Group>
             <Form.Group controlId="formComment">
-              <Form.Label>Комментарий</Form.Label>
+              <Form.Label style={{ marginTop: '1rem' }}>Комментарий</Form.Label>
               <Form.Control
                 as="textarea"
                 name="comment"
@@ -368,10 +360,20 @@ const MeetingsPage = () => {
             </Form.Group>
           </Form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleCancel}>Отмена</Button>
-          <Button variant="primary" onClick={handleSave}>Сохранить</Button>
-          <Button variant="danger" onClick={handleDelete}>Удалить</Button>
+        <Modal.Footer style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div style={{ display: 'flex', alignItems: 'flex-end' }}>
+            <Button
+              variant="outline-danger"
+              onClick={handleDelete}
+            >
+              <FaTrash /> Удалить
+            </Button>
+          </div>
+          <div style={{ display: 'flex', gap: '10px' }}>
+            <Button variant="secondary" onClick={handleCancel}>Отмена</Button>
+            <Button variant="primary" onClick={handleSave}>Сохранить</Button>
+          </div>
+          
         </Modal.Footer>
       </Modal>
     </div>
